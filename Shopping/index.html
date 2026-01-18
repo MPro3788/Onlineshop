@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bangsy Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-badge">B!</div>
+    <div class="header-main">
+      <h1>Bangsy Market</h1>
+      <p class="header-tagline">Lautes Design. Klare Einkäufe.</p>
+    </div>
+    <div class="cart-info">
+      <span class="cart-label">Warenkorb</span>
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel panel-products">
+      <h2 class="panel-title">Produkte</h2>
+      <div id="product-list" class="product-list">
+        <!-- Produkte via JS -->
+      </div>
+    </section>
+
+    <section class="panel panel-cart">
+      <div class="panel-cart-header">
+        <h2 class="panel-title">Warenkorb verwalten</h2>
+        <button id="checkout-btn" class="btn-accent" disabled>Zur Kasse</button>
+      </div>
+
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Artikel</th>
+            <th>Preis</th>
+            <th>Menge</th>
+            <th>Summe</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Einträge via JS -->
+        </tbody>
+      </table>
+
+      <div class="cart-footer">
+        <div>
+          <span class="cart-total-label">Gesamt:</span>
+          <span id="cart-total" class="cart-total">0.00 €</span>
+        </div>
+        <button id="clear-cart" class="btn-ghost">Warenkorb leeren</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Bangsy-Style Demo Shop – kein echter Zahlungsverkehr.</small>
+  </footer>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3>Bezahlen</h3>
+        <button class="modal-close" id="modal-close-btn">✕</button>
+      </header>
+      <div class="modal-body">
+        <p class="modal-note">Dieser Checkout ist nur eine Demo und führt keine echte Zahlung aus.</p>
+        <div class="modal-row">
+          <label for="pay-name">Name</label>
+          <input id="pay-name" type="text" placeholder="Max Mustermann">
+        </div>
+        <div class="modal-row">
+          <label for="pay-email">E-Mail</label>
+          <input id="pay-email" type="email" placeholder="max@example.com">
+        </div>
+        <div class="modal-row">
+          <label for="pay-method">Zahlungsart</label>
+          <select id="pay-method">
+            <option>Kreditkarte</option>
+            <option>PayPal</option>
+            <option>Rechnung</option>
+          </select>
+        </div>
+        <div class="modal-summary">
+          <span>Zu zahlender Betrag:</span>
+          <strong id="pay-amount">0.00 €</strong>
+        </div>
+        <button id="pay-now-btn" class="btn-accent full-width">Jetzt bezahlen (Demo)</button>
+        <p id="pay-status" class="pay-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
